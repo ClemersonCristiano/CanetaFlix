@@ -17,7 +17,7 @@ O sistema segue um modelo de **API RESTful**, onde:
 
 ## 🖼️ Diagrama de Componentes
 
-![Diagrama de Componentes](./canetaFlixAPI/doc/DiagramaComponentes_CanetaFlix_ClemersonCristiano.png)
+![Diagrama de Componentes](doc/DiagramaComponentes_CanetaFlix_ClemersonCristiano.png)
 
 ## 🗂️ Estrutura de Pastas
 
@@ -71,7 +71,7 @@ CanetaFlix/
 
 ## 🗄️ Banco de Dados
 
-![Modelo do Banco de Dados](./canetaFlixAPI/doc/ModeloBD_CanetaFlix_ClemersonCristiano.png)
+![Modelo do Banco de Dados](doc/ModeloBD_CanetaFlix_ClemersonCristiano.png)
 
 O banco de dados utilizado é o **MySQL**. A estrutura das tabelas pode ser vista no script SQL disponível na pasta `canetaFlixAPI/database/DBcanetaFlix.sql`.
 
