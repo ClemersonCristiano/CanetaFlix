@@ -82,14 +82,45 @@ main > form >.button{
     box-shadow: 0px 0px 10px 1px #1f13cb;
 }
 
-@media (width < 600px) {
+@media screen and (max-width: 600px) {
 
     main > picture{
         width: 90%;
     }
 
+    main > form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
     main > form > .button{
-        width: 60%;
+        width: 50%;
         height: 55px;
     }
+}
+
+@media screen and (min-width: 600px) and (max-width: 996px){
+
+    main > picture{
+        width: 60%;
+    }
+
+}
+
+@media screen and (min-width: 996px) and (max-width: 1200px){
+
+    main > picture{
+        width: 40%;
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+
+    main > picture{
+        width: 35%;
+    }
+
 }
