@@ -1,0 +1,70 @@
+main > .containerFormLogin{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px 10px;
+}
+
+main > .containerFormLogin > form{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 80%;
+    min-height: 400px;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 3px solid var(--corDestaque);
+    background-color: var(--corBackground2);
+    box-shadow: 0px 0px 10px 1px #000;
+}
+
+main > .containerFormLogin > form > .campoFormLogin{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    gap: 1rem;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid var(--corDestaque);
+    background-color: #000;
+    box-shadow: 0px 0px 10px 1px #000;
+}
+
+main > .containerFormLogin > form > .campoFormLogin > label{
+    font-size: 1.8rem;
+}
+
+main > .containerFormLogin > form > .campoFormLogin > input{
+    text-align: center;
+    width: 80%;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+main > .containerFormLogin > form > .btnFormLogin{
+    text-align: center;
+    width: 30%;
+    height: 45px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--corDestaque);
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 1px #000;
+}
