@@ -22,9 +22,9 @@ body{
 
 header{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     width: 100%;
     gap: 10px;
     padding: 10px;
@@ -33,11 +33,27 @@ header{
     background-color: var(--corBackground1);
 }
 
+header > .imagemCaneta{
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 120px;
+    
+}
+
+header > .imagemCaneta > img{
+    
+    width: 100px;
+    height: 100px;
+
+}
+
 header > h1{
     text-align: center;
     padding: 30px;
     color: white;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-shadow: 0px 0px 10px var(--corDestaque);
 }
 
@@ -103,6 +119,10 @@ main > form >.button{
 
 @media screen and (min-width: 600px) and (max-width: 996px){
 
+    header > h1{
+        font-size: 2rem;
+    }
+
     main > picture{
         width: 60%;
     }
@@ -111,6 +131,10 @@ main > form >.button{
 
 @media screen and (min-width: 996px) and (max-width: 1200px){
 
+    header > h1{
+        font-size: 2.5rem;
+    }
+
     main > picture{
         width: 40%;
     }
@@ -118,6 +142,10 @@ main > form >.button{
 }
 
 @media screen and (min-width: 1200px){
+
+    header > h1{
+        font-size: 2.5rem;
+    }
 
     main > picture{
         width: 35%;
