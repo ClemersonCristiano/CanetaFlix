@@ -35,6 +35,7 @@ CanetaFlix/
 │   │   ├── app.js         # Configuração principal do Express
 │   ├── database/          # Banco de Dados
 │   │   ├── DBcanetaFlix.sql   # Script SQL com estrutura do banco
+│   │   ├── seedDatabasae.js   # Script para popular o banco
 │   ├── .env               # Configuração de variáveis de ambiente
 │   ├── .gitignore         # Arquivos a serem ignorados pelo Git
 │   ├── package.json       # Configuração do projeto
