@@ -27,8 +27,9 @@ async function getFilmesPopulares(db, API_KEY){
 
         const filmesPopulares = JSON.parse(JSON.stringify(json));
 
+        console.log(`\nQuantidede de Filmes Adicionados: ${filmesPopulares.results.length}\n`);
         for (const filme of filmesPopulares.results) {
-            console.log(`Filme ${filme.title} inserido com sucesso! {`);
+            console.log(`Filme ${filme.title} inserido com sucesso! \n{`);
             await inserirMetadadosFilmes(db, filme, tipo_video);
             await inserirFilmes(db, filme, tipo_video);
             await inserirCategoriasFilmes(db, filme);
