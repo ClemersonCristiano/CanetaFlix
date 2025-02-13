@@ -1,11 +1,11 @@
 const video = require('../models/videoaModel.js');
 
-exports.listarVideos = async (req, res) => {
+exports.listarFilmes = async (req, res) => {
     try {
         const results = await video.getAll();
 
         // Padronizando os dados da resposta
-        const videosFormatados = results.map(video => ({
+        const resultadoFilmesFormatados = results.map(video => ({
             id: video.id,
             titulo: video.titulo,
             thumbnail: video.thumbnail,
@@ -19,8 +19,8 @@ exports.listarVideos = async (req, res) => {
         res.json({
             success: true,
             message: "Vídeos recuperados com sucesso",
-            total: videosFormatados.length,
-            data: videosFormatados
+            total: resultadoFilmesFormatados.length,
+            dadosFilmes: resultadoFilmesFormatados
         });
 
     } catch (error) {
