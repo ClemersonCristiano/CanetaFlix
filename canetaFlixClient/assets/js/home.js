@@ -26,6 +26,14 @@ async function listarFilmesHome(){
 
         }
 
+        for (let i = 0; i < card.length; i++) {
+
+            card[i].addEventListener('click', () => {
+                window.location.href = `filme.html?id=${filmes[i].id}`;
+            });
+
+        }
+
         // console.log(json.dadosFilmes);
 
         
