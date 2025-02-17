@@ -12,7 +12,7 @@ fetch(`http://localhost:3000/api/videos/filmes/${idFilme}`)
 
     dadosFilme.innerHTML = `
         
-        <iframe src="${filme.url}"> </iframe>
+        <iframe src="${filme.url}" frameborder="0" allowfullscreen></iframe>
 
         <section class="containerInfosFilme"> 
             <h1>${filme.titulo}</h1>
