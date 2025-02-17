@@ -6,7 +6,7 @@ exports.listarFilmes = async (req, res) => {
 
         // Padronizando os dados da resposta
         const resultadoFilmesFormatados = results.map(video => ({
-            id: video.id,
+            id: video.id_video_api,
             titulo: video.titulo,
             thumbnail: video.thumbnail,
             descricao: video.descricao,
