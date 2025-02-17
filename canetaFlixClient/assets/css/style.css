@@ -65,10 +65,11 @@ main{
     gap: 20px;
     width: 100%;
     min-height: 100vh;
+    padding: 20px 0px;
     background-color: var(--corBackground1);
 }
 
-picture{
+header > picture{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +77,7 @@ picture{
     width: 60%;
 }
 
-picture > img{
+header > picture > img{
     width: 100%;
     filter: drop-shadow(0px 0px 10px var(--corDestaque));
 }
@@ -107,7 +108,6 @@ main > #listagemFilmes{
     padding: 20px 5px;
     width: 100%;
     min-height: 100vh;
-    /* background-color: white; */
 }
 
 main > #listagemFilmes > .cardFilme{
@@ -115,23 +115,40 @@ main > #listagemFilmes > .cardFilme{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column wrap;
+    flex-direction: column;
     width: 200px;
-    height: 250px;
+    min-height: 250px;
     border-radius: 10px;
-    background-color: white;
-    
+}
+
+main > #listagemFilmes > .cardFilme:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px 1px var(--corDestaque);
 }
 
 main > #listagemFilmes > .cardFilme > img{
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    height: 250px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 main > #listagemFilmes > .cardFilme > h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    font-size: 1rem;
     text-align: center;
-    padding: 10px;
+    color: white;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--corBackground2);
+}
+
+main > #listagemFilmes > .cardFilme:hover > h2{
+    font-size: 1rem;
+    text-align: center;
     color: white;
 }
 
@@ -139,19 +156,43 @@ main > #dadosFilme{
     
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column nowrap;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
-    padding-top: 20px;
+    gap: 2rem;
     
 }
 
 main > #dadosFilme > iframe{
-
-    background-color: white;
+    
     border-radius: 5px;
+    border: none;
+    
+}
 
+main > #dadosFilme > .containerInfosFilme{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    gap: 1rem;
+    padding: 40px 0px;
+    border-radius: 10px;
+    background-color: var(--corBackground2);
+    
+}
+main > #dadosFilme > .containerInfosFilme > h1{
+    color: white;
+    font-size: 2rem;
+}
+
+main > #dadosFilme > .containerInfosFilme > p{
+    width: 80%;
+    color: white;
+    font-size: 1.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -230,7 +271,7 @@ main > #dadosFilme > iframe{
 
     main > #dadosFilme > iframe{
 
-        width: 80%;
+        width: 70%;
         height: 80%;
     
     }
