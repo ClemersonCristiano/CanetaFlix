@@ -135,7 +135,6 @@ Agora, a API estará rodando em `http://localhost:3000`
 
 ### 📍 **Metadados**
 
-- `GET /api/metadados` → Retorna todos os metadados salvos no banco
 - `POST /api/metadados/sincronizar` → Atualiza os metadados da API externa
 
 ### 📍 **Histórico**
