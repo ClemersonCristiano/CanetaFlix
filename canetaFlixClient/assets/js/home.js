@@ -13,11 +13,12 @@ async function listarFilmesHome(){
             
             listagemFilmes.innerHTML += `
             
-                <div class="cardFilme">
+                <picture class="cardFilme">
             
                     <img src="${filme.thumbnail}">
+                    <h2>${filme.titulo}</h2>
                     
-                </div>
+                </picture>
             
             `;
 
