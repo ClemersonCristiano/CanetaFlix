@@ -1,7 +1,7 @@
 
 const db = require('../config/DBconnection.js');
 
-const video = {
+const listarFilmesBD = {
     getAll: async () => {
         return new Promise((resolve, reject) => {
 
@@ -34,4 +34,4 @@ const video = {
     }
 };
 
-module.exports = video;
+module.exports = listarFilmesBD;
