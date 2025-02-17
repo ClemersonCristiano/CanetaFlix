@@ -17,6 +17,8 @@ fetch(`http://localhost:3000/api/videos/filmes/${idFilme}`)
         <section class="containerInfosFilme"> 
             <h1>${filme.titulo}</h1>
             <p>${filme.descricao}</p>
+            <p> Data de lançamento: ${filme.data_lancamento} </p>
+            <p> Categorias: ${filme.categorias} </p>
         </section>
     `;
 
