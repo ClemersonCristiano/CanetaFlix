@@ -130,8 +130,8 @@ Agora, a API estará rodando em `http://localhost:3000`
 
 ### 📍 **Vídeos**
 
-- `GET /api/videos` → Retorna a lista de vídeos
-- `GET /api/videos/:id` → Retorna detalhes de um vídeo específico
+- `GET /api/videos/fillmes` → Retorna a lista de vídeos
+- `GET /api/videos/fillmes/:id` → Retorna detalhes de um vídeo específico
 
 ### 📍 **Metadados**
 
@@ -139,13 +139,13 @@ Agora, a API estará rodando em `http://localhost:3000`
 
 ### 📍 **Histórico**
 
-- `GET /api/historico` → Retorna o histórico de vídeos assistidos
-- `POST /api/historico` → Registra um novo vídeo assistido
+- `GET /api/usuarios/historico` → Retorna o histórico de vídeos assistidos
+- `POST /api/usuarios/historico` → Registra um novo vídeo assistido
 
 ### 📍 **Favoritos**
 
-- `GET /api/favoritos` → Lista vídeos favoritos do usuário
-- `POST /api/favoritos` → Adiciona um vídeo aos favoritos
+- `GET /api/usuarios/favoritos` → Lista vídeos favoritos do usuário
+- `POST /api/usuario/sfavoritos` → Adiciona um vídeo aos favoritos
 
 ### 📍 **Autenticação de Usuários**
 
