@@ -1,0 +1,85 @@
+main > #dadosFilme{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    gap: 2rem;
+    
+}
+
+main > #dadosFilme > iframe{
+    
+    border-radius: 5px;
+    border: none;
+    
+}
+
+main > #dadosFilme > .containerInfosFilme{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    gap: 1rem;
+    padding: 40px 0px;
+    border-radius: 10px;
+    background-color: var(--corBackground2);
+    
+}
+main > #dadosFilme > .containerInfosFilme > h1{
+    color: white;
+    font-size: 2rem;
+}
+
+main > #dadosFilme > .containerInfosFilme > p{
+    width: 80%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    main > #dadosFilme > iframe{
+
+        width: 80%;
+        height: 50vh;
+    
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 996px){
+
+    main > #dadosFilme > iframe{
+
+        width: 80%;
+        height: 60vh;
+    
+    }
+
+}
+
+@media screen and (min-width: 996px) and (max-width: 1200px){
+
+    main > #dadosFilme > iframe{
+
+        width: 80%;
+        height: 70vh;
+    
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+
+    main > #dadosFilme > iframe{
+
+        width: 80%;
+        height: 85vh;
+    }
+
+}
