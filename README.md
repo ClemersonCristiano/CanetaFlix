@@ -139,18 +139,18 @@ Agora, a API estará rodando em `http://localhost:3000`
 
 ### 📍 **Histórico**
 
-- `GET /api/usuarios/historico` → Retorna o histórico de vídeos assistidos
-- `POST /api/usuarios/historico` → Registra um novo vídeo assistido
+- `GET /api/usuario/historico` → Retorna o histórico de vídeos assistidos
+- `POST /api/usuario/historico` → Registra um novo vídeo assistido
 
 ### 📍 **Favoritos**
 
-- `GET /api/usuarios/favoritos` → Lista vídeos favoritos do usuário
+- `GET /api/usuario/favoritos` → Lista vídeos favoritos do usuário
 - `POST /api/usuario/sfavoritos` → Adiciona um vídeo aos favoritos
 
 ### 📍 **Autenticação de Usuários**
 
-- `POST /api/usuarios/registro` → Cria um novo usuário com senha criptografada
-- `POST /api/usuarios/login` → Autentica um usuário e retorna um token JWT
+- `POST /api/usuario/registro` → Cria um novo usuário com senha criptografada
+- `POST /api/usuario/login` → Autentica um usuário e retorna um token JWT
 
 ## 📅 Atualização Automática de Metadados
 
