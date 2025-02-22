@@ -130,8 +130,8 @@ Agora, a API estará rodando em `http://localhost:3000`
 
 ### 📍 **Vídeos**
 
-- `GET /api/videos/fillmes` → Retorna a lista de vídeos
-- `GET /api/videos/fillmes/:id` → Retorna detalhes de um vídeo específico
+- `GET /api/videos/filmes` → Retorna a lista de vídeos
+- `GET /api/videos/filmes/:id` → Retorna detalhes de um vídeo específico
 
 ### 📍 **Metadados**
 
