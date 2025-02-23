@@ -5,8 +5,7 @@ const usuarioModel = {
 
     cadastrarUser: async (nome, email, pw) => {
         return new Promise((resolve, reject) => {
-            const salt = bcrypt.genSaltSync(10);
-            const hash = bcrypt.hashSync(pw, salt);
+            const hash = bcrypt.hashSync(pw, 10);
             const data_cadastro = new Date().toISOString().split('T')[0];
             const status = 'ativo';
             const query = 'INSERT INTO usuarios (nome, email, pw, data_cadastro, status) VALUES (?, ?, ?, ?, ?)';
