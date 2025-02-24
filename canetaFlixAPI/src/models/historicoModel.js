@@ -33,3 +33,5 @@ const historicoModel = {
     }
 
 };
+
+module.exports = historicoModel;
