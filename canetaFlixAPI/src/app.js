@@ -9,4 +9,8 @@ app.use(express.json());
 const videoRoutes = require('./routes/videoRoute.js');
 app.use('/api/videos/filmes', videoRoutes);
 
+// Importa e usa as rotas de favoritos
+const favoritosRoute = require('./routes/favoritosRoute.js');
+app.use('/api/usuario/favoritos', favoritosRoute);
+
 module.exports = app;
