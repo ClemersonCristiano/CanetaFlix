@@ -145,7 +145,8 @@ Agora, a API estará rodando em `http://localhost:3000`
 ### 📍 **Favoritos**
 
 - `GET /api/usuario/favoritos` → Lista vídeos favoritos do usuário
-- `POST /api/usuario/sfavoritos` → Adiciona um vídeo aos favoritos
+- `POST /api/usuario/favoritos/:id_usuario/:id_video_api` → Adiciona um vídeo aos favoritos
+- `POST /api/usuario/favoritos/:id_usuario/:id_video_api` → Remove um vídeo aos favoritos
 
 ### 📍 **Autenticação de Usuários**
 
