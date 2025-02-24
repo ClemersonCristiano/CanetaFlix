@@ -13,4 +13,8 @@ app.use('/api/videos/filmes', videoRoutes);
 const favoritosRoute = require('./routes/favoritosRoute.js');
 app.use('/api/usuario/favoritos', favoritosRoute);
 
+// Importa e usa as rotas de histórico
+const historicoRoute = require('./routes/historicoRoute.js');
+app.use('/api/usuario/historico', historicoRoute);
+
 module.exports = app;
