@@ -24,12 +24,14 @@ async function inserirTipoUser() {
 
 }
 async function inserirUsuarioBD() {
-
+    
+    const bcrypt = require('bcrypt');
     const pw = bcrypt.hashSync('admin', 10);
+
     const data_cadastro = new Date().toISOString().split('T')[0];
-    const queryUser = 'INSERT INTO usuarios (nome, email, pw, data_cadastro, status, id_tipo_usuario) VALUES ("admin", "admin@admin", ?, ? , "ativo", 1)';
+    const queryUser = 'INSERT INTO usuario (nome, email, pw, data_cadastro, status, tipo_usuario) VALUES ("admin", "admin@admin", ?, ? , "ativo", 1)';
     await new Promise((resolve, reject) => {
-        db.query(queryUser, [pw], [data_cadastro], (err, results) => {
+        db.query(queryUser, [pw, data_cadastro], (err, results) => {
             if (err) {
                 console.error('Erro ao inserir usuário:', err);
                 reject(err);
