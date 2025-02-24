@@ -19,8 +19,9 @@ const historicoModel = {
 
     adicionarFilmeHistorico: async (id_usuario, id_video_api) => {
         return new Promise((resolve, reject) => {
-            const query = 'INSERT INTO historico_visualizacao (id_usuario, id_video_api) VALUES (?, ?)';
-            db.query(query, [id_usuario, id_video_api], (err, results) => {
+            const data_visualizacao = new Date().toISOString().split('T')[0];
+            const query = 'INSERT INTO historico_visualizacao (id_usuario, id_video_api, data_visualizacao) VALUES (?, ?, ?)';
+            db.query(query, [id_usuario, id_video_api, data_visualizacao], (err, results) => {
                 if (err) {
                     console.error('Erro ao adicionar filme ao histórico:', err);
                     reject(err);
