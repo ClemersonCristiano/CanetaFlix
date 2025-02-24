@@ -45,7 +45,7 @@ const favoritosModel = {
         
         return new Promise((resolve, reject) => {
         
-            const query = 'DELETE FROM favoritos WHERE id_video_api = ? AND id_usuario = ?';
+            const query = 'DELETE FROM favoritos WHERE id_usuario = ? AND id_video_api = ?';
             db.query(query, [id_usuario, id_video_api], (err, results) => {
                 if (err) {
                     console.error('Erro ao remover favorito:', err);
