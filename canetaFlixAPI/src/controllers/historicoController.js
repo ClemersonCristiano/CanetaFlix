@@ -4,7 +4,7 @@ const historicoModel = require('../models/historicoModel.js');
 exports.listarHistorico = async (req, res) => {
 
     try {
-        const id_usuario = req.params.id_usuario;
+        const { id_usuario } = req.body;
         const historico = await historicoModel.listarHistorico(id_usuario);
 
         res.json({ 
@@ -26,9 +26,7 @@ exports.listarHistorico = async (req, res) => {
 exports.adicionarFilmeHistorico = async (req, res) => {
 
     try {
-        const id_usuario = req.params.id_usuario;
-        const id_video_api = req.params.id_video_api;
-
+        const {id_usuario, id_video_api} = req.body;
         const filme = await historicoModel.adicionarFilmeHistorico(id_usuario, id_video_api);
 
         res.json({ 
