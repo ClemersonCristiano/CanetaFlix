@@ -36,13 +36,14 @@ exports.listarFilmes = async (req, res) => {
 exports.getFilmeById = async (req, res) => {
     try {
 
-        const id = req.params.id; // Pega o ID da URL
+        const { id_video_api } = req.body; // Pega o ID da URL
+        console.log(id_video_api);
 
-        if (!id) {
+        if (!id_video_api) {
             return res.status(400).json({ success: false, message: "ID do vídeo não fornecido" });
         }
 
-        const filme = await videoModel.getById(id);
+        const filme = await videoModel.getById(id_video_api);
 
         if (!filme) {
             return res.status(404).json({ success: false, message: "Filme não encontrado" });
