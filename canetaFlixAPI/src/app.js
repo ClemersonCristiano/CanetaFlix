@@ -17,4 +17,8 @@ app.use('/api/usuario/favoritos', favoritosRoute);
 const historicoRoute = require('./routes/historicoRoute.js');
 app.use('/api/usuario/historico', historicoRoute);
 
+// // Importa e usa as rotas de usuário
+// const userRoute = require('./routes/userRoute.js');
+// app.use('/api/usuario', userRoute);
+
 module.exports = app;
