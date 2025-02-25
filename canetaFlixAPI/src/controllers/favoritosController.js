@@ -3,7 +3,7 @@ const favoritosModel = require('../models/favoritosModel');
 exports.listarFavoritos = async (req, res) => {
     try {
         
-        const id_usuario = req.params.id_usuario;
+        const id_usuario = req.body;
         const favoritos = await favoritosModel.getAllFavoritos(id_usuario);
 
         res.json({ 
@@ -23,8 +23,8 @@ exports.listarFavoritos = async (req, res) => {
 
 exports.adicionarFavorito = async (req, res) => {
     try {
-        const id_usuario = req.params.id_usuario;
-        const id_video_api = req.params.id_video_api;
+        
+        const {id_usuario, id_video_api} = req.body;
 
         const favorito = await favoritosModel.adicionarFavorito(id_usuario, id_video_api);
 
@@ -45,9 +45,9 @@ exports.adicionarFavorito = async (req, res) => {
 
 exports.removerFavorito = async (req, res) => {
     try {
-        const id_usuario = req.params.id_usuario;
-        const id_video_api = req.params.id_video_api;
 
+        const {id_usuario, id_video_api} = req.body;
+        
         const favorito = await favoritosModel.removerFavorito(id_usuario, id_video_api);
 
         res.json({ 
