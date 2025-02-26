@@ -87,7 +87,7 @@ header > #menuHeader > ul {
     justify-content: space-evenly;
     align-items: center;
     flex-flow: row nowrap;
-    width: 100%;
+    width: 60%;
     height: 40px;
     gap: 10px;
     list-style: none;
@@ -104,7 +104,7 @@ header > #menuHeader > ul > li > .itemMenuHeader{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 100%;
     color: #ffffff;
     text-decoration: none;
