@@ -15,18 +15,24 @@ exports.cadastrarUser = async (req, res) => {
 exports.Login = async (req, res) => {
     try {
         const { nome, pw } = req.body;
-        const result = await usuarioModel.Login(nome, pw);
-        const token = gerarToken(result);
+        const usuario = await usuarioModel.Login(nome, pw);
         
+        if (!usuario) {
+            return res.status(401).json({ success: false, message: 'Usuário ou senha incorretos' });
+        }
+
+        const token = gerarToken({ id: usuario.id, nome: usuario.nome });
+
         res.json({
             success: true,
-            message: "usuario recuperado com sucesso",
-            dadosusuarios: result, token
+            message: "Login bem-sucedido",
+            id_usuario: usuario.id,
+            token
         });
 
     } catch (error) {
-        console.error('Erro ao buscar usuário:', error);
-        res.status(500).json({ error: 'Erro ao buscar usuário' });
+        console.error('Erro ao buscar usuário:', error);
+        res.status(500).json({ error: 'Erro interno no servidor' });
     }
 };
 

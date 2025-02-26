@@ -28,23 +28,24 @@ const usuarioModel = {
             const query = 'SELECT * FROM usuario WHERE nome = ?';
             db.query(query, [nome], (err, results) => {
                 if (err) {
-                    console.error('Erro ao buscar usuário:', err);
-                    reject(err);
+                    console.error('Erro ao buscar usuário:', err);
+                    return reject(err);
+                }
+    
+                if (results.length === 0) {
+                    console.log('Usuário não encontrado');
+                    return resolve(null); 
+                }
+    
+                const usuario = results[0];
+                const isValid = bcrypt.compareSync(pw, usuario.pw);
+    
+                if (isValid) {
+                    console.log('Usuário encontrado');
+                    return resolve(usuario);
                 } else {
-                    if (results.length === 0) {
-                        console.log('Usuário não encontrado');
-                        resolve([]);
-                    } else {
-                        const usuario = results[0];
-                        const isValid = bcrypt.compareSync(pw, usuario.pw);
-                        if (isValid) {
-                            console.log('Usuário encontrado');
-                            resolve([usuario]);
-                        } else {
-                            console.log('Usuário ou Senha incorreta');
-                            resolve([]);
-                        }
-                    }
+                    console.log('Usuário ou Senha incorreta');
+                    return resolve(null);
                 }
             });
         });
