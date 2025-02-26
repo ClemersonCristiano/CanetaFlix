@@ -1,10 +1,16 @@
-const idFilme = new URLSearchParams(window.location.search).get('id');
-console.log(`ID do filme: ${idFilme}`);
+const id_video_api = new URLSearchParams(window.location.search).get('id');
+console.log(`ID do filme: ${id_video_api}`);
 
 const dadosFilme = document.getElementById('dadosFilme');
 
-
-fetch(`http://localhost:3000/api/videos/filmes/${idFilme}`)
+fetch(`http://localhost:3000/api/videos/filmes`,{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token')
+    },
+    body: JSON.stringify({ id_video_api })
+})
 .then(response => response.json())
 .then(json => {
 
