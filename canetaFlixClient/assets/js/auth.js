@@ -1,7 +1,7 @@
 const formLogin = document.getElementById("formLogin");
+const btnLogout = document.getElementById("btnLogout");
 
-formLogin.addEventListener('submit', async (e) => {
-    e.preventDefault(); 
+async function Login() {
 
     const nome = document.getElementById('user').value;
     const pw = document.getElementById('pass').value;
@@ -28,4 +28,17 @@ formLogin.addEventListener('submit', async (e) => {
     } catch (error) {
         console.error("Erro ao fazer login:", error);
     }
+
+}
+
+formLogin.addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+    Login();
 });
+
+// função de logout da sessão
+function logout() {
+    alert("Logout bem-sucedido");
+    sessionStorage.clear(); // Remove todos os dados armazenados na sessão
+    window.location.href = "login.html"; // Redireciona para a tela de login
+}
