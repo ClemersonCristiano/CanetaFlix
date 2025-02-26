@@ -11,10 +11,10 @@ exports.cadastrarUser = async (req, res) => {
     }
 };
 
-exports.buscarUser = async (req, res) => {
+exports.Login = async (req, res) => {
     try {
         const { nome, pw } = req.body;
-        const result = await usuarioModel.buscarUser(nome, pw);
+        const result = await usuarioModel.Login(nome, pw);
         res.status(200).json(result);
     } catch (error) {
         console.error('Erro ao buscar usuário:', error);
