@@ -1,1 +1,4 @@
 .env
+/canetaFlixAPI/node_modules
+canetaFlixAPI/package-lock.json
+canetaFlixAPI/package.json
