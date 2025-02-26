@@ -13,6 +13,29 @@
     --corDestaque: #1100ff;
 }
 
+header > .imagemCaneta{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+header > .imagemCaneta > img{
+    
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0px 0px 10px var(--corDestaque));
+}
+
+header > .imagemCaneta > h1{
+    text-align: center;
+    padding: 25px;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 10px var(--corDestaque);
+}
+
 body{
     min-width: 100%;
     min-height: 100vh;
