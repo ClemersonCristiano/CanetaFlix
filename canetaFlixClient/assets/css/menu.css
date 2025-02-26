@@ -124,6 +124,10 @@ header > #menuHeader > ul > li > .itemMenuHeader:hover::after{
     width: 100%;
 }
 
+#btnLogout{
+    cursor: pointer;
+}
+
 
 @media screen and (min-width: 300px) and (max-width: 800px) {
 
