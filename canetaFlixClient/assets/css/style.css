@@ -46,7 +46,7 @@ header > .imagemCaneta > img{
     
     width: 100px;
     height: 100px;
-
+    filter: drop-shadow(0px 0px 10px var(--corDestaque));
 }
 
 header > h1{
@@ -69,7 +69,7 @@ main{
     background-color: var(--corBackground1);
 }
 
-header > picture{
+main > picture{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +77,7 @@ header > picture{
     width: 60%;
 }
 
-header > picture > img{
+main > picture > img{
     width: 100%;
     filter: drop-shadow(0px 0px 10px var(--corDestaque));
 }
