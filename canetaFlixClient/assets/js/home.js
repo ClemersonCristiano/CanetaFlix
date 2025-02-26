@@ -3,7 +3,13 @@ const card = document.getElementsByClassName("cardFilme");
 
 async function listarFilmesHome(){
     
-    fetch('http://localhost:3000/api/videos/filmes')
+    fetch('http://localhost:3000/api/videos/filmes', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: localStorage.getItem('token')
+        }
+    })
     .then(response => response.json())
     .then(json => {
 
@@ -22,9 +28,6 @@ async function listarFilmesHome(){
             
             `;
 
-
-            // console.log(filme);
-
         }
 
         for (let i = 0; i < card.length; i++) {
@@ -34,10 +37,6 @@ async function listarFilmesHome(){
             });
 
         }
-
-        // console.log(json.dadosFilmes);
-
-        
 
     })
     .catch(error => console.error('Erro ao carregar a API:', error));
