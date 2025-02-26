@@ -3,25 +3,28 @@ const formLogin = document.getElementById("formLogin");
 formLogin.addEventListener('submit', async (e) => {
     e.preventDefault(); 
 
-    const usuario = document.getElementById('user').value;
+    const nome = document.getElementById('user').value;
     const pw = document.getElementById('pass').value;
 
     try {
         const response = await fetch('http://localhost:3000/api/usuario/login', {
-            method: 'POST', // 
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ usuario, pw })
+            body: JSON.stringify({ nome, pw })
         });
 
         const json = await response.json();
-
-        if (json.success) {
-            localStorage.setItem('token', json.token); // Salva o token JWT no localStorage
-            console.log("Token JWT recebido:", json.token);
-            window.location.href = "home.html"; // Redireciona para home
-        } else {
-            alert(json.message); // Exibe erro ao usuário
+        
+        if (!json.success) {
+            alert(json.message); //impede login inválido
+            return;
         }
+        
+        // salva o token se o login for bem-sucedido
+        sessionStorage.setItem('token', json.token);
+        sessionStorage.setItem('id_usuario', json.id_usuario);
+        window.location.href = "home.html";
+        
     } catch (error) {
         console.error("Erro ao fazer login:", error);
     }
