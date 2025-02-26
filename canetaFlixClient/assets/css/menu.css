@@ -5,29 +5,6 @@
     --corDestaque: #1100ff;
 }
 
-header > .imagemCaneta{
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-}
-
-header > .imagemCaneta > img{
-    
-    width: 100px;
-    height: 100px;
-    filter: drop-shadow(0px 0px 10px var(--corDestaque));
-}
-
-header > .imagemCaneta > h1{
-    text-align: center;
-    padding: 25px;
-    color: white;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 10px var(--corDestaque);
-}
-
 header > #botaoMenuMobile{
     flex: 1 1 20%;
     display: flex;
@@ -51,6 +28,7 @@ header > #botaoMenuMobile > .barra{
 header > #menuMobile{
     width: 100%;
     flex-flow: column nowrap;
+    text-transform: uppercase;
 }
 
 header > #menuMobile > ul {
@@ -148,6 +126,10 @@ header > #menuHeader > ul > li > .itemMenuHeader:hover::after{
 
 
 @media screen and (min-width: 300px) and (max-width: 800px) {
+
+    header{
+        flex-flow: row wrap;
+    }
 
     header > #menuHeader, header > #menuMobile{
         display: none;
