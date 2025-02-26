@@ -35,7 +35,7 @@ CanetaFlix/
 │   │   ├── app.js         # Configuração principal do Express
 │   ├── database/          # Banco de Dados
 │   │   ├── DBcanetaFlix.sql   # Script SQL com estrutura do banco
-│   │   ├── seedDatabasae.js   # Script para popular o banco
+│   │   ├── seedDatabase.js   # Script para popular o banco
 │   ├── .env               # Configuração de variáveis de ambiente
 │   ├── .gitignore         # Arquivos a serem ignorados pelo Git
 │   ├── package.json       # Configuração do projeto
@@ -97,14 +97,27 @@ git clone https://github.com/seu-usuario/canetaFlix.git
 cd CanetaFlix
 ```
 
-### 🔹 2. Instale as Dependências
+### 🔹 2. Inicie um projeto node e Instale as Dependências
+
+```sh
+cd canetaFlixAPI
+npm init -y
+```
 
 ```sh
 cd canetaFlixAPI
 npm install express mysql2 dotenv node-cron cors jsonwebtoken bcrypt
 ```
 
+// Obtenha um jwt_secret:
+```sh
+cd canetaFlixAPI
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+```
+
 ### 🔹 3. Configure o Banco de Dados
+
+Crie o banco de dados com o script SQL na pasta **`canetaFlixAPI/src/database/DBcanetaFlix.sql`**.*
 
 Crie um arquivo **.env** na raiz do projeto e adicione:
 
@@ -117,6 +130,7 @@ DB_PASS=sua_senha
 DB_NAME=seu_banco
 JWT_SECRET=sua_chave_secreta
 ```
+Rode o arquivo seedDatabase.js na pasta **`canetaFlixAPI/src/database/seedDatabase.js`**.*
 
 ### 🔹 4. Inicie o Servidor
 
@@ -131,7 +145,7 @@ Agora, a API estará rodando em `http://localhost:3000`
 ### 📍 **Vídeos**
 
 - `GET /api/videos/filmes` → Retorna a lista de vídeos
-- `GET /api/videos/filmes/:id` → Retorna detalhes de um vídeo específico
+- `POST /api/videos/filmes` → Retorna detalhes de um vídeo específico
 
 ### 📍 **Metadados**
 
@@ -145,13 +159,14 @@ Agora, a API estará rodando em `http://localhost:3000`
 ### 📍 **Favoritos**
 
 - `GET /api/usuario/favoritos` → Lista vídeos favoritos do usuário
-- `POST /api/usuario/favoritos/:id_usuario/:id_video_api` → Adiciona um vídeo aos favoritos
-- `POST /api/usuario/favoritos/:id_usuario/:id_video_api` → Remove um vídeo aos favoritos
+- `POST /api/usuario/favoritos` → Adiciona um vídeo aos favoritos
+- `DELET /api/usuario/favoritos` → Remove um vídeo aos favoritos
 
 ### 📍 **Autenticação de Usuários**
 
-- `POST /api/usuario/registro` → Cria um novo usuário com senha criptografada
 - `POST /api/usuario/login` → Autentica um usuário e retorna um token JWT
+- `POST /api/usuario` → Cria um novo usuário com senha criptografada
+- `DELETE /api/usuario` → Remove um usuário
 
 ## 📅 Atualização Automática de Metadados
 
