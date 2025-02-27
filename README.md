@@ -88,7 +88,7 @@ O banco de dados utilizado é o **MySQL**. A estrutura das tabelas pode ser vist
 
 ## 🚀 Como Rodar o Projeto
 
-### Crie uma conta e obtenha sua chave de API do TMDB, é facii e gratuito. Toda a informação nescessaria de como fazer no [Site Oficial do TMDB](https://developer.themoviedb.org/docs/getting-started)
+### Crie uma conta e obtenha sua chave de API do TMDB, é facil e gratuito. Toda a informação nescessaria de como fazer no [Site Oficial do TMDB](https://developer.themoviedb.org/docs/getting-started)
 
 ### 🔹 1. Clone o Repositório
 
