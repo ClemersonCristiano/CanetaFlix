@@ -1,5 +1,7 @@
 # 🎬 CanetaFlix - Plataforma de Streaming - **Em Desenvolvimento**
 
+## Vídeo de demonstração de funcionamento do projeto: [Link do Vídeo no Drive](https://drive.google.com/file/d/1tjmADqWM9U2kwIDoc4PVXqM8b-c83LzM/view?usp=sharing)
+
 ## 📌 Descrição
 
 CanetaFlix é um serviço básico de streaming desenvolvido para a disciplina de **Sistemas Distribuídos**. O sistema adota a **arquitetura de microserviços**, onde cada serviço é responsável por uma parte da aplicação. O back-end (API RESTful) é construído em **Node.js com Express.js**, e o front-end se comunica com a API RESTful para acessar os vídeos.
