@@ -144,33 +144,131 @@ Agora, a API estará rodando em `http://localhost:3000`
 
 ### 📍 **Vídeos**
 
+```sh
 - `GET /api/videos/filmes` → Retorna a lista de vídeos
+
+- Estrutura da Requisição:
+- fetch('http://localhost:3000/api/videos/filmes', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+         Authorization: sessionToken
+    }
+  })
+```
+```sh
 - `POST /api/videos/filmes` → Retorna detalhes de um vídeo específico
 
-### 📍 **Metadados**
-
-- `POST /api/metadados/sincronizar` → Atualiza os metadados da API externa
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/videos/filmes`,{
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_video_api })
+```
 
 ### 📍 **Histórico**
 
-- `GET /api/usuario/historico` → Retorna o histórico de vídeos assistidos
+```sh
+- `POST /api/usuario/historico/listar` → Retorna o histórico de vídeos assistidos
+
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/usuario/historico`,{
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_usuario })
+```
+```sh
 - `POST /api/usuario/historico` → Registra um novo vídeo assistido
+
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/usuario/historico`,{
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_usuario, id_video_api })
+```
 
 ### 📍 **Favoritos**
 
-- `GET /api/usuario/favoritos` → Lista vídeos favoritos do usuário
+```sh
+- `POST /api/usuario/favoritos` → Lista vídeos favoritos do usuário
+
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/usuario/favoritos/listar`,{
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_usuario })
+```
+```sh
 - `POST /api/usuario/favoritos` → Adiciona um vídeo aos favoritos
-- `DELET /api/usuario/favoritos` → Remove um vídeo aos favoritos
+
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/usuario/favoritos`,{
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_usuario, id_video_api })
+```
+```sh
+- `DELETE /api/usuario/favoritos` → Remove um vídeo aos favoritos
+
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/usuario/favoritos`,{
+      method: 'DELETE',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_usuario, id_video_api })
+```
 
 ### 📍 **Autenticação de Usuários**
 
+```sh
 - `POST /api/usuario/login` → Autentica um usuário e retorna um token JWT
+
+- Estrutura da Requisição:
+  fetch('http://localhost:3000/api/usuario/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, pw })
+  });
+```
+```sh
 - `POST /api/usuario` → Cria um novo usuário com senha criptografada
+
+- Estrutura da Requisição:
+  fetch('http://localhost:3000/api/usuario', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, email, pw })
+  });
+```
+```sh
 - `DELETE /api/usuario` → Remove um usuário
 
-## 📅 Atualização Automática de Metadados
-
-A API de metadados é consultada **uma vez por dia** para atualizar o banco de dados com novos vídeos. Esse processo é feito por um **cron job** configurado no arquivo `src/jobs/metadadosJob.js`.
+- Estrutura da Requisição:
+  fetch(`http://localhost:3000/api/usuario`,{
+      method: 'DELETE',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: sessionToken
+      },
+      body: JSON.stringify({ id_usuario, pw })
+```
 
 ## 📌 Considerações Finais
 
