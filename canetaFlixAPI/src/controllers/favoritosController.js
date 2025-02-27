@@ -3,7 +3,7 @@ const favoritosModel = require('../models/favoritosModel');
 exports.listarFavoritos = async (req, res) => {
     try {
         
-        const id_usuario = req.body;
+        const {id_usuario} = req.body;
         const favoritos = await favoritosModel.getAllFavoritos(id_usuario);
 
         res.json({ 

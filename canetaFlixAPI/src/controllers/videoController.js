@@ -36,7 +36,7 @@ exports.listarFilmes = async (req, res) => {
 exports.getFilmeById = async (req, res) => {
     try {
 
-        const { id_video_api } = req.body; // Pega o ID da URL
+        const { id_video_api } = req.body;
         console.log(id_video_api);
 
         if (!id_video_api) {
