@@ -1,7 +1,7 @@
 
 // Função que insere os filmes na tabela videos
 async function inserirFilmes(db, filme, tipo_video){
-    const url_video = `https://superflixapi.link/${tipo_video}/${filme.id}`; // Montagem do endpoint da API de videos
+    const url_video = `https://superflixapi.life/${tipo_video}/${filme.id}`; // Montagem do endpoint da API de videos
     const queryVideo = 'INSERT INTO video (id_video_api, url_video, id_Metadados) VALUES (?, ?, ?)';
     await new Promise((resolve, reject) => {
         db.query(queryVideo, [filme.id, url_video, filme.id], (err, results) => {
